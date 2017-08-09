@@ -1,0 +1,60 @@
+---
+title: "Rmarkdown integration"
+subtitle: "You better have a look at the website"
+documentclass: eecslides
+babel-lang: english
+output:
+  beamer_presentation:
+    highlight: tango
+    includes:
+      in_header: header.tex
+---
+
+
+<!-- Below in the example they use on the Rmarkdown doc-website -->
+
+# In the morning
+
+## Getting up
+
+- Turn off alarm
+- Get out of bed
+
+## Breakfast
+
+- Eat eggs
+- Drink coffee
+
+# In the evening
+
+## Dinner
+
+- Eat spaghetti
+- Drink wine
+
+----
+
+
+## Going to sleep
+
+- Get in bed
+- Count sheep
+
+
+----
+
+## Code chunk example
+
+```{r codechunk1}
+pulse <- function(x) (1-cos(x))^2
+```
+
+
+----
+
+## Figure example
+
+
+```{r figure1}
+plot(0)
+```

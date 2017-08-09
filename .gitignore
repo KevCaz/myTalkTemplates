@@ -1,0 +1,11 @@
+.DS_Store
+*.pdf
+
+# beamer files
+
+*.log
+*.nav
+*.aux
+*.out
+*.snm
+*.toc

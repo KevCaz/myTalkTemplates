@@ -1,0 +1,41 @@
+\definecolor{foreground}{RGB}{196,196,196}
+\definecolor{text}{RGB}{177,177,177}
+% rgb(77, 77, 77)
+\definecolor{kevcazblue}{RGB}{70,170,230}  %rgb(70, 170, 230)
+\definecolor{bssred}{RGB}{236, 77, 120}    %rgb(236, 77, 120)
+\definecolor{bssgreen}{RGB}{188, 232, 94}  %rgb(188, 232, 94)
+
+\setbeamercolor{normal text}{fg=text}
+\setbeamercolor{frametitle}{fg=foreground}
+\setbeamercolor{framesubtitle}{fg=kevcazblue}
+
+\setbeamercolor{title}{fg=kevcazblue}
+\setbeamercolor{subtitle}{fg=foreground}
+
+\setbeamercolor{alerted text}{fg=bssred}
+\setbeamercolor{structure}{fg=kevcazblue}
+
+\setbeamercolor{footlinecolor}{fg=kevcazblue}
+\setbeamercolor{section in head/foot}{fg=foreground}
+
+%%%%%%%%%%% Block color sets %%%%%%%%%%%%%%%%
+
+% Standard block
+\setbeamercolor{block title}{fg = kevcazblue, bg = kevcazblue!50}
+\setbeamercolor{block body}{bg = kevcazblue!40}
+
+% Alert block
+\setbeamercolor{block title alerted}{fg = bssred, bg = bssred!50}
+\setbeamercolor{block body alerted}{ bg = bssred!40}
+
+% Example block
+\setbeamercolor{block title example}{fg = black!15!bssgreen!85!, bg = bssgreen!50}
+\setbeamercolor{block body example}{ bg = bssgreen!40}
+
+\setbeamercolor{background canvas}{bg=black}
+\setbeamertemplate{background}{
+		\ifnum\c@framenumber=1%
+        \pgfuseimage{bg}
+    \else%
+    \fi%
+}
