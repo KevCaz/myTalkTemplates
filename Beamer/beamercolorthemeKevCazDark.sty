@@ -1,9 +1,11 @@
-\definecolor{foreground}{RGB}{196,196,196}
-\definecolor{text}{RGB}{177,177,177}
+\definecolor{foreground}{RGB}{197,197,197}
+\definecolor{text}{RGB}{197,197,197}
 % rgb(77, 77, 77)
 \definecolor{kevcazblue}{RGB}{70,170,230}  %rgb(70, 170, 230)
-\definecolor{bssred}{RGB}{236, 77, 120}    %rgb(236, 77, 120)
-\definecolor{bssgreen}{RGB}{188, 232, 94}  %rgb(188, 232, 94)
+\definecolor{kevcazred}{RGB}{236, 77, 120}    %rgb(236, 77, 120)
+\definecolor{kevcazgreen}{RGB}{188, 232, 94}  %rgb(188, 232, 94)
+\definecolor{kevcazgrey}{RGB}{97, 97, 97}
+
 
 \setbeamercolor{normal text}{fg=text}
 \setbeamercolor{frametitle}{fg=foreground}
@@ -12,7 +14,7 @@
 \setbeamercolor{title}{fg=kevcazblue}
 \setbeamercolor{subtitle}{fg=foreground}
 
-\setbeamercolor{alerted text}{fg=bssred}
+\setbeamercolor{alerted text}{fg=kevcazred}
 \setbeamercolor{structure}{fg=kevcazblue}
 
 \setbeamercolor{footlinecolor}{fg=kevcazblue}
@@ -22,15 +24,15 @@
 
 % Standard block
 \setbeamercolor{block title}{fg = kevcazblue, bg = kevcazblue!50}
-\setbeamercolor{block body}{bg = kevcazblue!40}
+\setbeamercolor{block body}{fg = kevcazgrey, bg = kevcazblue!30}
 
 % Alert block
-\setbeamercolor{block title alerted}{fg = bssred, bg = bssred!50}
-\setbeamercolor{block body alerted}{ bg = bssred!40}
+\setbeamercolor{block title alerted}{fg = kevcazred, bg = kevcazred!50}
+\setbeamercolor{block body alerted}{fg = kevcazgrey, bg = kevcazred!30}
 
 % Example block
-\setbeamercolor{block title example}{fg = black!15!bssgreen!85!, bg = bssgreen!50}
-\setbeamercolor{block body example}{ bg = bssgreen!40}
+\setbeamercolor{block title example}{fg = black!15!kevcazgreen!85!, bg = kevcazgreen!50}
+\setbeamercolor{block body example}{fg = kevcazgrey, bg = kevcazgreen!30}
 
 \setbeamercolor{background canvas}{bg=black}
 \setbeamertemplate{background}{

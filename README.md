@@ -42,8 +42,8 @@ Have a look at [Remark](https://github.com/gnab/remark) (it's great). I've added
 Open `index.html` with your favorite Web Browser, then:
 
 
-`F`: full screen mode
-`P`: toogle presenter mode
-`C`: open a new-synchronised windows
-`Number + enter`: go to Number slide
-`H` or `?`: toogle the help
+- `F`: full screen mode
+- `P`: toogle presenter mode
+- `C`: open a new-synchronised windows
+- `Number + enter`: go to Number slide
+- `H` or `?`: toogle the help
