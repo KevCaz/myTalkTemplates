@@ -1,0 +1,413 @@
+---
+title       : R Graphics
+subtitle    : An overview of possibilities
+author      : 'Kevin Cazelles and Nicolas Casajus'
+job         : Université du Québec à Rimouski
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      #
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+user        : KevCaz
+repo        : QCBSgraphR
+assets      :
+  css: "https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"
+---
+
+
+<!-- to  -->
+
+<!-- Setting knitr  -->
+```{r echo=FALSE}
+knitr::opts_chunk$set(
+  comment = "##",
+  collapse = TRUE,
+  warning = FALSE,
+  message = FALSE,
+  fig.width=6,
+  fig.height=6
+)
+```
+
+<!-- Call our scripts -->
+
+```{r echo = FALSE}
+for (i in list.files("../scripts", pattern="*\\.R$", full.names = TRUE))
+    knitr::read_chunk(i)
+```
+
+
+
+## Outline
+
+- Introduction
+- The `graphics` package basis
+- Composition and multi-panel plotting
+- Graphics automation and exporting
+- Resources
+- Exercises
+
+--- .transition
+
+## Introduction
+
+--- .andy
+
+## The importance of graphics
+
+<q>A picture is worth a thousand words</q>
+
+- Visual summary of data / information
+- More efficient than table and text
+- Useful for exploring data
+    - trends, correlations, cycles, outliers, etc.
+- Essential for presenting results
+
+<br/>
+
+- But a bad graph can lie about data
+- And sometimes a graphic is not the solution
+
+
+
+--- &twocol w1:40% w2:60%
+
+## The components of a graph
+
+*** =right
+
+```{r echo = FALSE}
+<<load_data>>
+<<component_1>>
+```
+
+--- &twocol w1:40% w2:60%
+
+## The components of a graph
+
+*** =left
+
+- Chart area
+
+*** =right
+
+```{r echo = FALSE}
+<<component_2>>
+```
+
+--- &twocol w1:40% w2:60%
+
+## The components of a graph
+
+*** =left
+- Chart area
+- Plot area
+
+*** =right
+```{r echo = FALSE}
+<<component_3>>
+```
+
+--- &twocol
+
+## The components of a graph
+
+*** =left
+- Chart area
+- Plot area
+- Data representation
+
+
+*** =right
+```{r echo = FALSE}
+<<component_4>>
+```
+
+--- &twocol
+
+## The components of a graph
+
+*** =left
+- Chart area
+- Plot area
+- Data representation
+- Axis (scaling, labeling)
+
+*** =right
+```{r echo = FALSE}
+<<component_5>>
+```
+
+--- &twocol
+
+## The components of a graph
+
+*** =left
+- Chart area
+- Plot area
+- Data representation
+- Axis (scaling, labeling)
+- Figure title
+
+*** =right
+```{r echo = FALSE}
+<<component_6>>
+```
+
+--- &twocol
+
+## The components of a graph
+
+*** =left
+- Chart area
+- Plot area
+- Data representation
+- Axis (scaling, labeling)
+- Figure title
+- Legend
+
+*** =right
+```{r echo = FALSE}
+<<component_7>>
+```
+
+---
+
+## Some guidelines for better graphs
+
+--- &twocol w1:40% w2:60%
+
+## Some guidelines for better graphs
+
+*** =left
+- Do not use pie chart
+- Do not use 3D (never)
+- Use consistent colors
+
+*** =right
+```{r echo = FALSE}
+<<pie3d_1>>
+```
+
+--- &twocol
+
+## Some guidelines for better graphs
+
+*** =left
+- Do not use pie chart
+- Do not use 3D (never)
+- Use consistent colors
+- Do prefer this representation
+
+*** =right
+```{r echo = FALSE}
+<<pie3d_2>>
+```
+
+--- &twocol
+
+## Some guidelines for better graphs
+
+*** =left
+- Do not use more than 6 colors
+- Do not use high contrast color
+
+*** =right
+```{r echo = FALSE}
+<<bubble_1>>
+```
+
+--- &twocol
+
+## Some guidelines for better graphs
+
+*** =left
+- Do not use more than 6 colors
+- Do not use high contrast color
+- Sometimes sizes and symbols are better
+
+*** =right
+```{r echo = FALSE}
+<<bubble_2>>
+```
+
+--- &twocol
+
+## Some guidelines for better graphs
+
+*** =left
+- Write textual informations horizontally
+- Do not use distracting elements
+- Do not add chart junk
+
+*** =right
+```{r echo = FALSE}
+<<tufte_1>>
+```
+
+--- &twocol
+
+## Some guidelines for better graphs
+
+*** =left
+- Write textual informations horizontally
+- Do not use distracting elements
+- Do not add chart junk
+- Think about the Data-Ink ratio (Tufte, 1983)
+
+*** =right
+```{r echo = FALSE}
+<<tufte_2>>
+```
+
+--- &slide
+
+## Some guidelines for better graphs
+
+<br/><br/>
+
+### "Each element of a graph has to help understanding data"
+
+### "Choose the graphic that shows what you want to show"
+
+
+
+
+--- &slide
+
+## The R system
+
+
+- Software environment for statistical computing and graphics
+- Open-source, free and multiplatform
+- Widely used in the scientific community
+- Programming language
+- Implementation of the S programming language
+- The core system is extended through user-created packages
+- You can do what you want with R
+
+
+<div class='centered'> <img src='./assets/img/Rlogo.png' style="align:center; width:15%;"/> </div>
+
+
+
+
+---
+## The R system
+
+  <img src='./assets/img/Murrell2015.jpg' style="width:60%; margin: 0 20%;"/>
+  <div class='centered'>Murrell, P. (2015) <a href="https://journal.r-project.org/archive/2015-1/murrell.pdf">The gridGraphics Package</a>. The R Jounal.</div>
+
+
+--- &twocol w1:40% w2:60%
+## Graphical packages - graphics
+
+*** =left
+- Base package
+- S-like plotting functions
+- Contains the famous function `plot()`
+- And a lot of well-known functions:
+  - `boxplot()`, `barplot()`, `hist()`
+  - `lines()`, `points()`, `legend()`
+  - etc.
+
+```{r, eval = FALSE}
+<<scatter_cmd>>
+```
+
+*** =right
+
+```{r, echo = FALSE}
+<<scatter>>
+```
+
+--- &twocol w1:40% w2:60%
+
+## Graphical packages - grid
+
+*** =left
+- An alternative set of graphical functions
+- Well-suited for developers
+- `ggplot2` is based on this package
+
+
+*** =right
+```{r echo = FALSE}
+<<scatter>>
+```
+
+--- &twocol w1:40% w2:60%
+
+## Graphical packages - lattice
+
+*** =left
+- Based on the `grid` package
+- High-level system inspired by Trellis graphics
+- Specialized on multivariate data
+- and multipanel figures
+
+```{r eval = FALSE}
+<<lattice_cmd>>
+```
+
+*** =right
+
+```{r echo = FALSE}
+<<lattice>>
+```
+
+
+--- &twocol w1:40% w2:60%
+
+## Graphical packages - ggplot2
+
+*** =left
+- Also based on the `grid` package
+- A complete plotting system for R
+- Based on the Grammar of Graphics
+- But introduces its own syntax
+- and requires a long time to master it
+
+```{r eval = FALSE}
+<<ggplot_cmd>>
+```
+
+- See the QCBS workshop on [ggplot2](http://qcbs.ca/wiki/r_workshop4)
+*** =right
+```{r echo = FALSE}
+<<ggplot>>
+```
+
+
+--- &twocol w1:40% w2:60%
+
+## Graphical packages - plotrix
+
+*** =left
+- Based on the `graphics` package
+- lots of specialized plots (i.e. polar plots)
+- axis, labeling and color scaling functions
+
+```{r eval = FALSE, fig.width=5, fig.height=5}
+<<plotrix_cmd>>
+```
+
+*** =right
+```{r echo = FALSE}
+<<plotrix>>
+```
+
+
+
+
+--- .transition
+## Resources
+
+
+---
+## Resources
+
+- CRAN task view for graphs &nbsp;&nbsp;[<i class="fa fa-globe" aria-hidden="true"></i>](https://cran.r-project.org/web/views/Graphics.html)
+- more R packages indexed &nbsp;&nbsp;[<i class="fa fa-globe" aria-hidden="true"></i>](http://kevincazelles.fr/rgraphics/2015/12/04/r-and-graphics.html)
+- ggplot2 website &nbsp;&nbsp;[<i class="fa fa-globe" aria-hidden="true"></i>](http://docs.ggplot2.org/current/)
+- a pdf (fr) for base graphs &nbsp;&nbsp;[<i class="fa fa-file-pdf-o" aria-hidden="true"></i>](http://kevincazelles.fr/material/assets/graphR_2014.pdf)

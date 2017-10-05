@@ -1,0 +1,30 @@
+---
+title: "Demo ioSlides"
+date: "`r paste0('Last update:', format(Sys.time(), '%d %B %Y'))`"
+author: Kevin Cazelles
+# lang: french
+output:
+    ioslides_presentation:
+        incremental: true
+        widescreen: true
+        # logo: ./img/logoTEE.png
+---
+
+# In the morning
+
+## Getting up
+
+- Turn off alarm
+- Get out of bed
+
+## Breakfast
+
+- Eat eggs
+- Drink coffee
+
+# In the evening
+
+## Dinner
+
+- Eat spaghetti
+- Drink wine

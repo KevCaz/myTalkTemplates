@@ -1,0 +1,27 @@
+---
+title: "Habits"
+author: KevCaz
+date: March 22, 2017
+output: slidy_presentation
+incremental: true
+highlight: pygments
+---
+
+# In the morning
+
+## Getting up
+
+- Turn off alarm
+- Get out of bed
+
+## Breakfast
+
+- Eat eggs
+- Drink coffee
+
+# In the evening
+
+## Dinner
+
+- Eat spaghetti
+- Drink wine
