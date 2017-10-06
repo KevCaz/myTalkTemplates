@@ -1,13 +1,13 @@
 ---
 title: "Demo ioSlides"
-date: "`r paste0('Last update:', format(Sys.time(), '%d %B %Y'))`"
+date: "`r paste0('Last update: ', format(Sys.time(), '%d %B %Y'))`"
 author: Kevin Cazelles
 # lang: french
 output:
     ioslides_presentation:
         incremental: true
         widescreen: true
-        # logo: ./img/logoTEE.png
+        #logo: ./img/logo.png
 ---
 
 # In the morning
@@ -28,3 +28,19 @@ output:
 
 - Eat spaghetti
 - Drink wine
+
+
+## cool
+
+<div class="centered">
+This text is centered.
+</div>
+
+## cool2
+
+<div class="columns-2">
+
+  - Bullet 1
+  - Bullet 2
+  - Bullet 3
+</div>
