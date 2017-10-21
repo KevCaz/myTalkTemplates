@@ -1,46 +1,74 @@
 ---
 title: "Demo ioSlides"
 date: "`r paste0('Last update: ', format(Sys.time(), '%d %B %Y'))`"
-author: Kevin Cazelles
+author: 'Kevin Cazelles, University of Guelph  [<i class="fa fa-github" aria-hidden="true"></i>](https://github.com/KevCaz/mapsWithR)  [<i class="ai ai-researchgate" aria-hidden="true"></i>](https://www.researchgate.net/profile/Kevin_Cazelles)'
 # lang: french
 output:
     ioslides_presentation:
         incremental: true
         widescreen: true
+        includes:
+          in_header: kcheader.html  
         #logo: ./img/logo.png
 ---
 
-# In the morning
 
-## Getting up
+```{r dsetup, results = "hide", echo = FALSE, message = FALSE}
+knitr::opts_chunk$set(
+  fig.align='center',
+  tidy=FALSE,
+  comment="R>> ",
+  size = 'small'
+)
+```
 
-- Turn off alarm
-- Get out of bed
+
+
+# A title 1
+
+## A title 2
+
+- List that can be incremental
+- see the yaml header
 
 ## Breakfast
 
-- Eat eggs
-- Drink coffee
-
-# In the evening
-
-## Dinner
-
-- Eat spaghetti
-- Drink wine
+1. Numbered list
+2. Nice!!
 
 
-## cool
+# Code chunks
+
+## A simple code chunk
+
+```{r codechunk1}
+2+2
+```
+
+## A figure
+
+```{r codechunk2}
+seqx <- seq(0,10,0.1)
+plot(seqx, cos(seqx), type='h')
+```
+
+
+## Centered
 
 <div class="centered">
 This text is centered.
 </div>
 
-## cool2
+## Example with 2 columns
 
 <div class="columns-2">
 
-  - Bullet 1
-  - Bullet 2
-  - Bullet 3
+  - To make it look good
+  - I changed the width of the figure  
+
+  ```{r codechunk3, echo=F, fig.width=5.5}
+  seqx <- seq(0,10,0.1)
+  plot(seqx, cos(seqx), type='h')
+  ```
+
 </div>

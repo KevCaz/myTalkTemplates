@@ -72,10 +72,10 @@ I use the [Rmarkdown integration](http://rmarkdown.rstudio.com/slidy_presentatio
 ## ioSlides Presentation
 
 I use the [Rmarkdown integration](http://rmarkdown.rstudio.com/ioslides_presentation_format.html)
+for ioSlides, they did a great job!
 
 
 ### Display Modes
-
 
 - 'f' enable fullscreen mode
 - 'w' toggle widescreen mode
@@ -87,7 +87,8 @@ I use the [Rmarkdown integration](http://rmarkdown.rstudio.com/ioslides_presenta
 ## Make your life easier with R markdown integration
 
 These integrations are fantastic! You can do even better by using a
-simple bash function (very helpful if you aren't a Rstudio user).
+simple bash function (very helpful if you aren't a Rstudio user and a shell
+user).
 
 ```bash
 rmdto() {
@@ -99,7 +100,8 @@ rmdto() {
 
 ## Todo
 
-- [ ] customize Slidy (so far I've used the example on the Rmd website)
+- [ ] faire une simple page qui montre mes templates (on aurait un lien pour chaque, au moins les html)
+- [ ] customize Slidy (so far I've used the example on the R markdown website)
 - [ ] customize ioSlides (same comment as above)
-- [ ] try [shower](https://shwr.me/#) and the [Rmd integration](https://github.com/mangothecat/rmdshower)
+- [ ] try [shower](https://shwr.me/#) and the [.Rmd integration](https://github.com/mangothecat/rmdshower)
 by Gabor Csardi
